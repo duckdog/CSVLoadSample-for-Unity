@@ -74,6 +74,7 @@
 -define:UNITY_EDITOR
 -define:UNITY_EDITOR_64
 -define:UNITY_EDITOR_OSX
+'Assets/Button/ChoosingRouteButton.cs'
 'Assets/CSVRoad/CSVMasterTable.cs'
 'Assets/CSVRoad/MasterTableBase.cs'
 'Assets/CSVRoad/ScenarioSetter.cs'

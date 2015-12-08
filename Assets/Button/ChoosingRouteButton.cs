@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class ChoosingRouteButton : MonoBehaviour {
 
-	[
+
 	// Use this for initialization
 	void Start () {
 	

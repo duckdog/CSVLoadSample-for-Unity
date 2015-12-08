@@ -83,7 +83,7 @@ public class ScenarioSetter : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
+		int i = _current_text_number [0, 0];
 
 		Style = new GUIStyle();
 		State = new GUIStyleState();
@@ -149,8 +149,10 @@ public class ScenarioSetter : MonoBehaviour {
 
 		} else {
 
-			//テキストデータを更新
+			//テキストデータを更
+		
 			UpdateScenerio (_next_route);
+		
 			/*			switch (_next_route) {
 
 			case Route.Main:
@@ -209,35 +211,47 @@ public class ScenarioSetter : MonoBehaviour {
 				_next_route = Route.A;
 				UpdateScenerio (_next_route);
 
-				do{
-					//シナリオをスキップ//次の分岐のテキストまで配列番号を更新
+				while(true)
+				{
+					if (_B [CurrentTextNumber_B]._next_route != Route.B) {
+						//シナリオをスキップ//次の分岐のテキストまで配列番号を更新
+						CurrentTextNumber_B++;
+						break;
+					}
 					CurrentTextNumber_B++;
 				}
-				while((_B[CurrentTextNumber_B]._next_route != Route.Main));
-				
-				do{
-					//シナリオをスキップ//次の分岐のテキストまで配列番号を更新
-					if(CurrentTextNumber_C >= _C.Count) break;
+				while(true)
+				{
+					if (_C [CurrentTextNumber_C]._next_route != Route.C) {
+						//シナリオをスキップ//次の分岐のテキストまで配列番号を更新
+						CurrentTextNumber_C++;
+						break;
+					}
 					CurrentTextNumber_C++;
 				}
-				while((_C[CurrentTextNumber_C]._next_route != Route.Main));
-
+			
 			}
 			if (Input.GetKeyDown(KeyCode.B)) {
 				_next_route = Route.B;
 				UpdateScenerio (_next_route);
-				do{
-					//シナリオをスキップ//次の分岐のテキストまで配列番号を更新
+				while(true)
+				{
+					if (_A [CurrentTextNumber_A]._next_route != Route.A) {
+						//シナリオをスキップ//次の分岐のテキストまで配列番号を更新
+						CurrentTextNumber_A++;
+						break;
+					}
 					CurrentTextNumber_A++;
 				}
-				while(( _A[CurrentTextNumber_A]._next_route != Route.Main));
-				
-				do{
-					//シナリオをスキップ//次の分岐のテキストまで配列番号を更新
-					if(CurrentTextNumber_C >= _C.Count) break;
+				while(true)
+				{
+					if (_C [CurrentTextNumber_C]._next_route != Route.C) {
+						//シナリオをスキップ//次の分岐のテキストまで配列番号を更新
+						CurrentTextNumber_C++;
+						break;
+					}
 					CurrentTextNumber_C++;
 				}
-				while((_C[CurrentTextNumber_C]._next_route != Route.Main));
 
 			}
 			if (Input.GetKeyDown(KeyCode.C)) {
@@ -245,17 +259,24 @@ public class ScenarioSetter : MonoBehaviour {
 				UpdateScenerio (_next_route);
 
 
-				do{
-					//シナリオをスキップ//次の分岐のテキストまで配列番号を更新
+				while(true)
+				{
+					if (_A [CurrentTextNumber_A]._next_route != Route.A) {
+						//シナリオをスキップ//次の分岐のテキストまで配列番号を更新
+						CurrentTextNumber_A++;
+						break;
+					}
 					CurrentTextNumber_A++;
 				}
-				while((_A[CurrentTextNumber_A]._next_route != Route.Main));
-				
-				do{
-					//シナリオをスキップ//次の分岐のテキストまで配列番号を更新
+				while(true)
+				{
+					if (_B [CurrentTextNumber_B]._next_route != Route.B) {
+						//シナリオをスキップ//次の分岐のテキストまで配列番号を更新
+						CurrentTextNumber_B++;
+						break;
+					}
 					CurrentTextNumber_B++;
 				}
-				while((_B[CurrentTextNumber_B]._next_route != Route.Main));
 			}
 		
 		
@@ -293,6 +314,8 @@ public class ScenarioSetter : MonoBehaviour {
 			_next_route   = _C [_current_text_number [(int)route, 0]]._next_route;
 			_current_text_number [(int)route, 0]++;
 			break;
+		case Route.NULL:
+			break;
 		}
 	}
 
@@ -302,7 +325,7 @@ public class ScenarioSetter : MonoBehaviour {
 		{
 			Debug.Log(timer);
 			yield return new WaitForSeconds(timer[i]);
-			//text_number++;
+			//text_number++;bug
 		}
 	}
 

@@ -2,9 +2,12 @@ Scenario,CurrentRoute,NextRoute,WatchTime,Animation,State
 テキスト読み込みを開始します,0,0,1,Stay,Normal
 「テキストテスト:abc:ABC:あいう:アイウ:愛宇,0,0,1,Stay,Normal
 分岐フラグをたてます。,0,-1,1,Stay,Normal
-A-1ルートのテキストを表示しています,1,0,1,Stay,Normal
+A-1ルートのテキストを表示しています,1,1,1,Stay,Normal
+A-1-2ルートのテキストを表示しています,1,0,1,Stay,Normal
 B-1ルートのテキストを表示しています,2,0,1,Stay,Normal
-C-1ルートの,3,3,1,Stay,Normal
+C-1ルー,3,3,1,Stay,Normal
+C-1ート,3,3,1,Stay,Normal
+C-1--の,3,3,1,Stay,Normal
 c-1テキストを表示しています,3,0,1,Stay,Normal
 分岐フラグをたてます。,0,-1,1,Stay,Normal
 A-2ルートのテキストを表示しています,1,0,1,Stay,Normal
